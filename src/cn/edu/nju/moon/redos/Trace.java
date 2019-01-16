@@ -9,6 +9,8 @@ import cn.edu.nju.moon.redos.attackers.GeneticAttacker;
 import cn.edu.nju.moon.redos.attackers.ga.Population;
 import cn.edu.nju.moon.redos.regex.ReScuePattern.Node;
 
+import com.google.gson.Gson;
+
 /*
  * The trace of match detail.
  */
@@ -143,6 +145,7 @@ public class Trace{
 	 */
 	public void setStr(String input) {
 		this.str = new String(input);
+		System.err.println("Test string: " + new Gson().toJson(this.str));
 		this.eachStep = new int[input.length() + 1];
 		for (int i = 0; i < this.eachStep.length; i++) this.eachStep[i] = 0;
 	}
